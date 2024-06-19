@@ -1,0 +1,10 @@
+<h1>My Playlists</h1>
+
+<ul>
+  {% for playlist in playlists %}
+    <li>
+      <a href="{{ playlist.external_urls.spotify }}">{{ playlist.name }}</a>
+      <p>{{ playlist.description }}</p>
+    </li>
+  {% endfor %}
+</ul>

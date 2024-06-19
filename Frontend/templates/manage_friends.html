@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Friends Requests</title>
+    <style>
+        .friend-request {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .friend-request label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manage Friends Requests</h1>
+    <form id="friend-requests-form" action="/spotify/manages_friends_requests" method="POST">
+        <div id="friend-requests-container">
+            {% for friend in friends %}
+            <div class="friend-request">
+                <label>{{ friend }}</label>
+                <input type="radio" name="friend_{{ friend }}" value="accept" id="accept_{{ friend }}">
+                <label for="accept_{{ friend }}">Accept</label>
+                <input type="radio" name="friend_{{ friend }}" value="deny" id="deny_{{ friend }}">
+                <label for="deny_{{ friend }}">Deny</label>
+            </div>
+            {% endfor %}
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

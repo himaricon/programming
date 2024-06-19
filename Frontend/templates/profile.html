@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        .spotify-login-button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, {{ username }}</h1>
+    <ul>
+        <li><a href="/spotify/friends_music">View Friends' Music</a></li>
+        <li><a href="/spotify/mymusic">View your Music</a></li> 
+        <li><a href="/spotify/manages_friends_requests">Friends Requests</a></li>
+        <li><a href="/spotify/send_friends_requests">Send Friends Requests</a></li>
+    </ul>
+    {% if signin %}
+        <button class="spotify-login-button" onclick="window.location.href='/spotifylogin'">Spotify Login</button>
+    {% endif %}
+</body>
+</html>
